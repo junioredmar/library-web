@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-button routerLink="/dashboard">
+            <mat-icon class="toolbar-first-icon">book</mat-icon>
+            Library
+        </button>
+        <span class="toolbar-spacer"></span>
+        <button mat-button routerLink="/books">
+            <mat-icon class="toolbar-icon">library_books</mat-icon>
+            My Library Books
+        </button>
+        <button mat-button routerLink="/find">
+            <mat-icon class="toolbar-icon">add_circle</mat-icon>
+            Register new book
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="main">
+    <router-outlet></router-outlet>
+    <!-- <app-messages></app-messages> -->
+</div>

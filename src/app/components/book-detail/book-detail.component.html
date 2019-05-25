@@ -1,0 +1,42 @@
+
+<button mat-button color="primary" (click)="goBack()">
+  <mat-icon>keyboard_backspace</mat-icon>
+  Back
+</button>
+
+<div *ngIf="book">
+  <div><strong>ID: </strong>{{book.id}}</div>
+  <div><strong>ISBN: </strong>{{book.isbn}}</div>
+  <div><strong>Title: </strong>{{book.title}}</div>
+  <div><strong>Genre: </strong>{{book.genre}}</div>
+  <div><strong>Authors: </strong> <span *ngFor="let author of book.authors">{{author}}</span></div>
+  
+  <div *ngIf="book.isBorrowed">
+    <div><strong>Borrowed by: </strong>{{book.borrowedBy}}</div>
+    <div><strong>Comment: </strong>{{book.comment}}</div>
+    <div><strong>Returning Date: </strong>{{ book.returningDate | date :'short' }}</div>
+    <button mat-raised-button color="default" (click)="clean();save()">Return</button>
+  </div>
+
+  <div *ngIf="!book.isBorrowed">    
+    <button *ngIf="!displayBorrow" mat-raised-button color="primary" (click)="displayBorrow = true;">Borrow</button>
+    <div *ngIf="displayBorrow">
+      <div>
+        <label>Borrowed by
+          <input [(ngModel)]="book.borrowedBy" placeholder="Borrowed by"/>
+        </label>
+      </div>
+      <div>
+        <label>Comment
+          <input [(ngModel)]="book.comment" placeholder="Comment"/>
+        </label>
+      </div>
+      <div>
+        <label>Returning Date
+          <input [(ngModel)]="book.returningDate" placeholder="Returning Date"/>
+        </label>
+      </div>
+      <button mat-raised-button color="primary" (click)="book.isBorrowed=true;save()">Save</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<mat-grid-list cols="1" rowHeight="90px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <h1>My Book Library</h1>
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1" [rowspan]="1">
+    <h2>Search a <b>BOOK</b> by Author, Title, Genre or ISBN</h2>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<app-book-search></app-book-search>
+
+<h3>Some of my books:</h3>
+
+<mat-grid-list cols="4" rowHeight="40px">
+  <mat-grid-tile [colspan]="1" [rowspan]="1" *ngFor="let book of topBooks">
+    <a routerLink="/books/{{book.id}}">
+      <app-book-card [book]="book"></app-book-card>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>

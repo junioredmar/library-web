@@ -1,0 +1,20 @@
+/* AppComponent's private CSS styles */
+.toolbar-icon {
+  padding: 0 10px;
+}
+
+.toolbar-first-icon {
+  padding: 0 2px;
+}
+
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
+.main {
+  flex-grow: 1;
+  margin-top: 25px;
+  margin-right: 70px;
+  margin-left: 70px;
+  margin-bottom: 10px;
+}
