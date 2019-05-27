@@ -1,7 +1,10 @@
 # How to run
 - Make sure you have installed [Angular CLI](https://github.com/angular/angular-cli), at least version 7.0.2.
 - Make sure that you have the [Backend API](https://github.com/junioredmar/library-api) up and running on the url: http://localhost:16326
-
+> In case you have the backend running on a different port. Change it on `./src/environments/environment.ts`. For example:
+```
+baseUrl: 'https://localhost:5001'
+```
 1. Restore the packages
 ```
 npm install
@@ -10,7 +13,7 @@ npm install
 ```
 ng serve --open
 ```
-3. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+3. Navigate to `http://localhost:4200/`
 
 # UX Design
 ## Home page
